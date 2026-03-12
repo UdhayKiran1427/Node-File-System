@@ -1,0 +1,4 @@
+Anand | 22 | 0 | Mumbai
+Bihu | 17 | 1 | Pune
+Rahul | 25 | 0 | Delhi
+Sara | 28 | 1 | Hyderabad
