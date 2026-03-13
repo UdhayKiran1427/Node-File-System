@@ -5,7 +5,7 @@ const XLSX = require("xlsx");
 const app = express();
 const PORT = 3000;
 
-app.get("/api/exercise7", (req, res) => {
+module.exports =  (req, res) => {
 
     try {
 
@@ -37,8 +37,5 @@ app.get("/api/exercise7", (req, res) => {
 
     }
 
-});
+};
 
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-});

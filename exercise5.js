@@ -2,10 +2,7 @@ const express = require("express");
 const fs = require("fs");
 const path = require("path");
 
-const app = express();
-const PORT = 3000;
-
-app.get("/api/exercise5", (req, res) => {
+module.exports =  (req, res) => {
 
     const filePath = path.join(__dirname, "lib", "users-info.txt");
 
@@ -19,15 +16,15 @@ app.get("/api/exercise5", (req, res) => {
 
         lines.forEach(line => {
 
-            if (line.trim() !== "") {
+            if (line !== "") {
 
-                const [name, age, gender, city] = line.split(",");
+                const [name, age, gender, city] = line.split("|");
 
                 users.push({
-                    name: name.trim(),
+                    name: name,
                     age: Number(age),
-                    gender: gender.trim(),
-                    city: city.trim()
+                    gender: gender == 0 ? "Male" : "Female",
+                    city: city
                 });
 
             }
@@ -43,15 +40,11 @@ app.get("/api/exercise5", (req, res) => {
         res.json(users);
 
     } catch (error) {
-
+        console.log(error)
         res.json({
             message: "Error reading file: " + error.message
         });
 
     }
 
-});
-
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-});
+};

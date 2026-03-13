@@ -16,7 +16,7 @@ function generateRandomWord(length) {
     return word;
 }
 
-app.get("/api/exercise2", (req, res) => {
+module.exports =  (req, res) => {
 
     const words = [];
 
@@ -35,8 +35,5 @@ app.get("/api/exercise2", (req, res) => {
         sample: sample
     });
 
-});
+};
 
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-});

@@ -23,8 +23,7 @@ console.log("Students Content:", getFileContent('students.csv'));
 console.log("Index Content:", getFileContent('index.html'));
 console.log("----------------------");
 
-app.use("api", express.static("public"));
-app.get('/api/exercise1', (req, res) => {
+module.exports =  (req, res) => {
     const readmeContent = getFileContent('readme.txt');
     const studentsContent = getFileContent('students.csv');
     const indexContent = getFileContent('index.html');
@@ -34,8 +33,5 @@ app.get('/api/exercise1', (req, res) => {
         "student": studentsContent,
         "index": indexContent
     });
-});
+};
 
-app.listen(port, () => {
-    console.log(`Server running at http://localhost:${port}`);
-});

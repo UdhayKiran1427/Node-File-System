@@ -8,7 +8,7 @@ const PORT = 3000;
 // fixed timestamp
 const timestamp = "14-Apr-2022 11:15:45 AM";
 
-app.get("/api/exercise4", (req, res) => {
+module.exports =  (req, res) => {
 
     const filePath = path.join(__dirname, "lib", "debug.log");
 
@@ -41,8 +41,4 @@ app.get("/api/exercise4", (req, res) => {
 
     }
 
-});
-
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-});
+};

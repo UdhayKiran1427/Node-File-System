@@ -14,7 +14,7 @@ function copyFile(fileName, newFile) {
     }
 }
 
-app.get("/api/exercise3", (req, res) => {
+module.exports = (req, res) => {
 
     const sourceFile = path.join(__dirname, "lib", "source.txt");
     const newFile = path.join(__dirname, "lib", "copied.txt");
@@ -25,8 +25,5 @@ app.get("/api/exercise3", (req, res) => {
         message: resultMessage
     });
 
-});
+};
 
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-});

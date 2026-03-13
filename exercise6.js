@@ -5,7 +5,7 @@ const path = require("path");
 const app = express();
 const PORT = 3000;
 
-app.get("/api/exercise6", (req, res) => {
+module.exports =  (req, res) => {
 
     try {
 
@@ -37,8 +37,5 @@ app.get("/api/exercise6", (req, res) => {
 
     }
 
-});
+};
 
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-});
